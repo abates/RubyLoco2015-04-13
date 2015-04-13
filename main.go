@@ -42,7 +42,7 @@ func todoCrud(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if t, ok := todoList[fmt.Sprintf("%d", id)]; !ok {
+	if t, ok := todoList[fmt.Sprintf("%d", id)]; ok {
 		if r.Method == "GET" {
 			renderJson(w, t)
 		} else if r.Method == "DELETE" {
